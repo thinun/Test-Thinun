@@ -4,9 +4,12 @@
 }
 :root{
     --blue:blue;
-    --softBlue:#6565ce;
+    --softBlue:#2E4D83;
     --text:white;
-    --btn:linear-gradient(to right, #0c169b, #1b639f);;
+    --border:#2E4D83;
+    --btn:linear-gradient(to right, #12274D, #2E4D83);
+    --bg:linear-gradient(to right, #12274D, #2E4D83);
+    --text-light:#82BFE0;
 
 }
 

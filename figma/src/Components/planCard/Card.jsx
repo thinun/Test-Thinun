@@ -4,26 +4,29 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck} from "@fortawesome/free-solid-svg-icons";
 import './Card.css'
 import star from '../../assets/Component 18.png'
+import vector from '../../assets/Vector.png'
+import checkbox from '../../assets/Checkbox.png'
+import frame from '../../assets/Frame.png'
+
 
 const Card = () => {
 
     const [id, setId] = useState(null)
     const [price, setPrice] = useState(null);
     const [container, setContainer] = useState(false)
-    const [button, setButton] = useState(false)
-    const order = [2, 1, 3];
+    const order = [3, 1, 2];
+    const [mobileButton, setMobileButton] = useState(false)
 
-    const handleRadioClick = (id, price) => {
+    const handleMobileButtonClick = (id,price) => {
+        setMobileButton(true)
         setId(id)
         setPrice(price)
-    }
-    const handleMobileButtonClick = () => {
-        if (id) {
-            alert(`Plan ID- ${id} Plan Price-$${price} /Mo`);
-        } else {
-            alert('Please Select a plan');
-        }
     };
+    const handleMobileButton=()=>{
+        if(id && price){
+            alert(`Card id- ${id} price - ${price}`)
+        }
+    }
 
 
     const handleProductClick = (id, price) => {
@@ -34,7 +37,7 @@ const Card = () => {
     }
     const handleProductButton = (id, price) => {
         setContainer(false)
-        if (!setButton) {
+        if (!container) {
             alert(`Card ID-${id} Price-${price}/Mo`);
         }
     }
@@ -42,12 +45,23 @@ const Card = () => {
     return (
         <>
             <div className={'card-container'}>
-                {featuredProductsData.map(featuredProduct => (
-                    <div className="product"
+                {featuredProductsData.map((featuredProduct, index) => (
+                    <div className={`product${index === 0 ? 'product-special' : ''}`}
                          onClick={() => handleProductClick(featuredProduct.id, featuredProduct.price)}
-                         key={featuredProduct.id}>
+                         key={featuredProduct.id}
+                         style={{order: order[index + 1]}}>
 
-                        <img className={'product-discount'} src={star} alt={'star'}/>
+                        {index === 0 ? (
+                            <div className='special-container'>
+                                <img className={'product-discount-special'} src={star} alt={'star'}/>
+                                <div className={'special'}>
+                                    <img src={vector} alt={''}/>
+                                    <p>Most Popular</p>
+                                </div>
+                            </div>
+                        ) : (
+                            <img className={'product-discount'} src={star} alt={'star'}/>
+                        )}
                         <div className={'product-title'}>
                             {featuredProduct.title}
                         </div>
@@ -62,32 +76,41 @@ const Card = () => {
                                     className={'product-button'}>Buy Now
                             </button>
                         </div>
+
                         <div className={'product-features-container'}>
+                            <hr/>
                             {featuredProduct.features.map((features) => (
                                 <div className={'product-features'} key={featuredProduct.id}>
+
                                     <i><FontAwesomeIcon icon={faCircleCheck}
                                                         className={'icon'}/>
                                     </i>
                                     <p>{features}</p>
                                 </div>
                             ))}
-
                         </div>
-
                     </div>
                 ))}
             </div>
             <div className={'mobile'}>
-                {featuredProductsData.map(featuredProduct => (
+                {featuredProductsData.map((featuredProduct,index) => (
                     <div className={'card-container-mobile'} key={featuredProduct.id}>
 
                         <div className="product"
                              key={featuredProduct.id}>
+                            {index===0?<img src={frame} alt={''} className={'m-special'}/>:''}
                             <img className={'product-discount'} src={star} alt={'star'}/>
                             <div className={'product-left'}>
                                 <form>
-                                    <input type={"radio"}
-                                           onClick={() => handleRadioClick(featuredProduct.id, featuredProduct.price)}/>
+                                    <button type="button" className="tick-button"
+                                            key={featuredProduct.id}
+                                            onClick={() => {
+                                                handleMobileButtonClick(featuredProduct.id, featuredProduct.price)
+                                            }}>
+                                        <img className={'mobile-checkbox-img'} src={checkbox} alt={''}/>
+                                        <FontAwesomeIcon icon={faCircleCheck}
+                                                         className={`mobile-icon${mobileButton && id===featuredProduct.id ?'clicked':''}`}/>
+                                    </button>
                                 </form>
                             </div>
                             <div className={'product-right'}>
@@ -106,15 +129,14 @@ const Card = () => {
                     </div>
                 ))}
 
-                <div className={'product-b'}>
-                    <button onClick={handleMobileButtonClick}
+                <div className={'m-button-container'}>
+                    <button onClick={handleMobileButton}
                             className={'product-button'}>Buy Now
                     </button>
                 </div>
-
-
+                <div className={'features-title'}>Features</div>
                 <div className={'product-dis'}>
-                    <p>The Following Features are included in every Package</p>
+                    <p>The following features are included in every plan</p>
                 </div>
 
                 <div className={'product-features'}>
@@ -122,36 +144,45 @@ const Card = () => {
                         <i><FontAwesomeIcon icon={faCircleCheck}
                                             className={'icon'}/>
                         </i>
-                        <p>Create ultimate Dynamic QR code</p>
+                        <p>Access a Variety of QR types</p>
                     </div>
                     <div className={'features'}>
                         <i><FontAwesomeIcon icon={faCircleCheck}
                                             className={'icon'}/>
                         </i>
-                        <p>Access to variety of QR types</p>
+                        <p>Unlimited Editing of QR codes</p>
                     </div>
                     <div className={'features'}>
                         <i><FontAwesomeIcon icon={faCircleCheck}
                                             className={'icon'}/>
                         </i>
-                        <p>Unlimited editing of QR code</p>
+                        <p>Unlimited scans</p>
                     </div>
                     <div className={'features'}>
                         <i><FontAwesomeIcon icon={faCircleCheck}
                                             className={'icon'}/>
                         </i>
-                        <p>Unlimited Scan</p>
+                        <p>Multiple QR Code download formats</p>
                     </div>
                     <div className={'features'}>
                         <i><FontAwesomeIcon icon={faCircleCheck}
                                             className={'icon'}/>
                         </i>
-                        <p>ultimate Users</p>
+                        <p>Unlimited users</p>
                     </div>
-
+                    <div className={'features'}>
+                        <i><FontAwesomeIcon icon={faCircleCheck}
+                                            className={'icon'}/>
+                        </i>
+                        <p>Premium Customer Support</p>
+                    </div>
+                    <div className={'features'}>
+                        <i><FontAwesomeIcon icon={faCircleCheck}
+                                            className={'icon'}/>
+                        </i>
+                        <p>Cancel at Anytime</p>
+                    </div>
                 </div>
-
-
             </div>
         </>
     )

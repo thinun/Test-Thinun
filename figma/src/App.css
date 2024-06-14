@@ -7,7 +7,7 @@
 }
 
 .plan-title h1 span{
-    color: var(--softBlue);
+    color: var(--text-light);
 }
 .plan-title p{
     margin-top: 10px;
