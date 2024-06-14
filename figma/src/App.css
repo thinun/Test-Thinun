@@ -1,0 +1,14 @@
+.plan-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.plan-title h1 span{
+    color: var(--softBlue);
+}
+.plan-title p{
+    margin-top: 10px;
+}
