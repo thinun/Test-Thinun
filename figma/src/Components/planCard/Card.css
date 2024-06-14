@@ -307,12 +307,12 @@
 
     .tick-button {
         position: relative;
-        background-color: #eee;
         border-radius: 50%;
         cursor: pointer;
         width: 20px;
         height: 20px;
         border: none;
+        background-color: white;
 
     }
 
