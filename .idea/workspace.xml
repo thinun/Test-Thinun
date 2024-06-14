@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e0cda34-bd46-4bd6-a047-934fe65f3eb3" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/figma/src/assets/Checkbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/figma/src/assets/Frame.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figma/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/figma/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figma/src/Components/planCard/Card.css" beforeDir="false" afterPath="$PROJECT_DIR$/figma/src/Components/planCard/Card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figma/src/Components/planCard/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/figma/src/Components/planCard/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figma/src/Components/planCard/card_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/figma/src/Components/planCard/card_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figma/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/figma/src/index.css" afterDir="false" />
-    </list>
+    <list default="true" id="3e0cda34-bd46-4bd6-a047-934fe65f3eb3" name="Changes" comment="final" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +90,7 @@
       <updated>1718336413417</updated>
       <workItem from="1718336414546" duration="15446000" />
       <workItem from="1718352769975" duration="180000" />
-      <workItem from="1718362890172" duration="21006000" />
+      <workItem from="1718362890172" duration="21323000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -111,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718364218040</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="final">
+      <option name="closed" value="true" />
+      <created>1718384502439</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718384502439</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +117,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
 </project>
