@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import featuredProductsData from './card_data.js';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck} from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,7 @@ const Card = () => {
     const [price, setPrice] = useState(null);
     const [container, setContainer] = useState(false)
     const [button, setButton] = useState(false)
+    const order = [2, 1, 3];
 
     const handleRadioClick = (id, price) => {
         setId(id)
@@ -27,16 +28,15 @@ const Card = () => {
 
     const handleProductClick = (id, price) => {
         setContainer(true)
-        setButton(false)
-        if (container && button) {
+        if (container) {
             alert(`Plan ID- ${id} Plan Price-$${price} /Mo`);
-        } else {
-
         }
     }
     const handleProductButton = (id, price) => {
-        setButton(true)
-        alert(`Card ID-${id} Price-${price}/Mo`);
+        setContainer(false)
+        if (!setButton) {
+            alert(`Card ID-${id} Price-${price}/Mo`);
+        }
     }
 
     return (
@@ -46,6 +46,7 @@ const Card = () => {
                     <div className="product"
                          onClick={() => handleProductClick(featuredProduct.id, featuredProduct.price)}
                          key={featuredProduct.id}>
+
                         <img className={'product-discount'} src={star} alt={'star'}/>
                         <div className={'product-title'}>
                             {featuredProduct.title}
@@ -63,7 +64,7 @@ const Card = () => {
                         </div>
                         <div className={'product-features-container'}>
                             {featuredProduct.features.map((features) => (
-                                <div className={'product-features'}>
+                                <div className={'product-features'} key={featuredProduct.id}>
                                     <i><FontAwesomeIcon icon={faCircleCheck}
                                                         className={'icon'}/>
                                     </i>
@@ -78,7 +79,7 @@ const Card = () => {
             </div>
             <div className={'mobile'}>
                 {featuredProductsData.map(featuredProduct => (
-                    <div className={'card-container-mobile'}>
+                    <div className={'card-container-mobile'} key={featuredProduct.id}>
 
                         <div className="product"
                              key={featuredProduct.id}>
